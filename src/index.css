@@ -287,7 +287,7 @@ body {
     color: #FFF;
     text-align: center;
     font-family: Montserrat;
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-style: normal;
     font-weight: 800;
 
@@ -313,7 +313,7 @@ body {
     font-weight: 400;
     margin: 0;
     padding: 0;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   form {
@@ -326,7 +326,7 @@ body {
     height: 6vh;
     border-radius: 20px;
     margin-bottom: 2rem; 
-    border: 2px;
+    border-color: #FFF;
     font-size: 2.5rem;
     text-align: center;
   }
@@ -346,8 +346,5 @@ body {
   button:hover {
     background: #025a8a;
   }
-  /* .ganaste {
-    background-image: url("/GanasteHorizontal.png");
-    background-size: cover;
-  } */
+
 }
