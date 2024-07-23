@@ -143,7 +143,7 @@ class App extends Component {
     if (this.state.juegoCompletado) {
       return (
         <div className="felicitaciones">
-          {this.state.numeroDeIntentos < 18 ? (
+          {this.state.numeroDeIntentos < 11 ? (
             <div className='ganaste'>
               <img src='Gracias.png'  alt='' className="imagenGracias"></img>
             </div>
