@@ -20,19 +20,29 @@ body {
 header {
   height: 50px;
   border: 1px solid transparent;
-  margin-bottom: 10px;
+  margin-bottom: 5rem;
   display: flex;
   justify-content: center; 
   align-items: center; 
 }
 
 .titulo {
-  font-size: 70hv;
-  font-weight:500;
-  padding: 1px;
-  color: #fff;
+  background-image: url('pinones.png');
+  background-size: contain; /* Cambia a 'contain' para ajustar la imagen al contenedor */
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFF;
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
+  font-size: 4rem; /* Ajusta el tamaño de fuente según tus preferencias */
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  padding: 4rem;
+  display: inline-block;
 }
+
+
 
 
 
@@ -78,47 +88,264 @@ header {
   object-fit: contain;
 }
 
+
 body {
-   background-color: rgb(96, 119, 245); 
-  /* background-image: url("/newbg.jpg"); */
+  background-size: cover; 
+  margin: 0;
+  padding: 0;
+  font-family: "Be Vietnam", sans-serif;
 }
 
-div:focus {
-  outline: none !important;
+.felicitaciones {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
 }
 
-.registro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@media (orientation: portrait) {
+  body {
+    background-image: url("/newbg.png");
+    background-size: cover;
+    font-family: "Be Vietnam", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin-top: 10%;
+
+  }
+  .registratetitulo {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 800;
+
+  }
+
+
+  .imagentop {
+    width: 60%;
+    max-width: 900px; 
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .imagenGracias {
+    width: 100%; 
+    max-width: 1080px; 
+    height: auto;
+    margin: 0 auto 2rem; 
+    display: block; 
+    align-content: center; 
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  .text1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Be Vietnam";
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .text2 {
+    width: 90%;
+    height:20% ;
+    color: #FFF;
+    text-align: center;
+    font-family: "Be Vietnam";
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    font-size: 4rem;
+  }
+
+
+  form {
+    width: 90%;
+    max-width: 1080px; 
+  }
+
+  input, button {
+
+    width: 100%; 
+    height: 6vh;
+    border-radius: 20px;
+    margin-bottom: 1rem; 
+    border: none;
+    font-size: 4rem;
+  }
+
+  input {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem;
+    color: rgba(255, 255, 255, 0.50);
+    font-family: "Be Vietnam";
+  }
+
+  button {
+    background: #06ADBF;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 0.5rem;
+    font-family: Montserrat;
+    font-weight: 700;
+  }
+
+  button:hover {
+    background: #025a8a;
+  }
+
+  @media (max-width: 900px), (max-height: 1600px) {
+    .text2 {
+      font-size:1.5rem;
+      margin: 0;
+    }
+    .text1{
+      font-size:2rem;
+    }
+
+    input,button {
+      font-size: 1.8rem;
+    }
+
+    .registratetitulo {
+      font-size: 3rem;
+      margin: 0;
+
+    }
+    .titulo{
+      font-size: 2rem;
+    }
+    header {
+      border: 1px solid transparent;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+    }
+
+  }
+
+
+  @media (min-width: 901px) and (min-height: 1601x) {
+    .text2 {
+      font-size: 1.5rem;
+    }
+
+  }
+
 }
 
-input {
-  font-size: 1.5em;
-  margin: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  width: 250px;
+
+@media (orientation: landscape) {
+  body {
+    background-image: url("/bghorizontal.png");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: "Be Vietnam", sans-serif;
+  }
+
+  .registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin-top: 10%;
+  }
+
+  .imagentop {
+    width: 20%; 
+    max-width: 900px; 
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .imagenGracias {
+    width: 40%; 
+    max-width: 900px; 
+    height: auto;
+    margin: 0 auto 5rem; 
+    display: block; 
+    align-content: center; 
 }
 
-button {
-  background: #0383bc;
-  color: white;
-  font-size: 1.5em;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  .registratetitulo {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 800;
 
-button:hover {
-  background: #025a8a;
+  }
+  .text1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Be Vietnam";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    padding: 0;
+    margin: 5px;
+  }
+
+  .text2 {
+    width: 50%;
+    height:10% ;
+    color: #FFF;
+    text-align: center;
+    font-family: "Be Vietnam";
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+  }
+
+  form {
+    width: 50%;
+    max-width: 1080px; 
+  }
+
+  input, button {
+    width: 100%; 
+    height: 6vh;
+    border-radius: 20px;
+    margin-bottom: 1rem; 
+    border: none;
+    font-size: 2.5rem;
+  }
+
+  input {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.50);
+  }
+
+  button {
+    background: #06ADBF;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #025a8a;
+  }
+  /* .ganaste {
+    background-image: url("/GanasteHorizontal.png");
+    background-size: cover;
+  } */
 }

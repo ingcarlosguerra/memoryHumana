@@ -9,7 +9,8 @@ const getEstadoInicial = () => {
     baraja,
     parejaSeleccionada: [],
     estaComparando: false,
-    numeroDeIntentos: 0    
+    numeroDeIntentos: 0,
+    juegoCompletado: false, // Nuevo estado para el juego completado
   };
 }
 
@@ -93,7 +94,10 @@ class App extends Component {
     if (
       baraja.filter((carta) => !carta.fueAdivinada).length === 0
     ) {
-      alert(`Ganaste en ${this.state.numeroDeIntentos} intentos!`);
+      this.setState({ juegoCompletado: true });
+      if (this.state.numeroDeIntentos >= 10){
+        alert("Deses hacerlo en menos de 10 intentos para lograrlo")
+      }
     }
   }
 
@@ -106,9 +110,14 @@ class App extends Component {
   render() {
     if (!this.state.registrado) {
       return (
+      <div className="top" >
         <div className="registro">
+          <img src='marco1.png'alt='' className="imagentop"></img>
+          <h1 className='text1'>¡Pon a prueba tu memoria! </h1>
+          <h2 className='text2'>Encuentra todas las parejas en el menor número de intentos posible y demuestra tu habilidad.
+          ¿Listo para el desafío?</h2>
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
-          <h1 className="titulo">Registro</h1>
+          <h1 className="registratetitulo">Registrate</h1>
           <form>
             <input
               type="text"
@@ -124,14 +133,32 @@ class App extends Component {
               value={this.state.correo}
               onChange={this.handleChange}
             />
-            <button type="button" onClick={this.handleRegistro}>Siguiente</button>
+            <button type="button" onClick={this.handleRegistro}>¡Juega ahora!</button>
           </form>
+        </div>
+      </div>
+      );
+    }
+
+    if (this.state.juegoCompletado) {
+      return (
+        <div className="felicitaciones">
+          {this.state.numeroDeIntentos < 18 ? (
+            <div className='ganaste'>
+              <img src='Gracias.png'  alt='' className="imagenGracias"></img>
+            </div>
+          ) : (
+            <div>
+              {/* <p style={{color:'white'}}>Intentos: {this.state.numeroDeIntentos}</p> */}
+              <button onClick={() => this.resetearPartida()} style={{ display: 'block', margin: 'auto', width: '70%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>Volver a Intentarlo</button>
+            </div>
+          )}
         </div>
       );
     }
 
     return (
-      <div className="App">
+      <div className="App" >
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
         <Header
           numeroDeIntentos={this.state.numeroDeIntentos}
