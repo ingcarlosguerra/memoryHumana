@@ -15,6 +15,8 @@ const getEstadoInicial = () => {
   };
 }
 
+const sp = new URLSearchParams(window.location.search);
+const zone = sp.get('zone')?.toLowerCase() || '';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +25,7 @@ class App extends Component {
       nombre: '',
       correo: '',
       registrado: false,
+      zoneExp: zone
     };
   }
 
@@ -36,9 +39,7 @@ class App extends Component {
       this.setState({ registrado: true });
       const newUniqueId = Math.random().toString(36).substring(7);
       const newHashId = 'RD-Memory-Match-' + newUniqueId;
-      const sp = new URLSearchParams(window.location.search);
-      const zone = sp.get('zone')?.toLowerCase() || '';
-      const url = `https://mocionws.info/dbController.php?method=newRecordExclude&table=leads&name=${this.state.nombre}&email=${this.state.correo}&uniqueId=${newHashId}&experience=${zone}`;
+      const url = `https://mocionws.info/dbController.php?method=newRecordExclude&table=leads&name=${this.state.nombre}&email=${this.state.correo}&uniqueId=${newHashId}&experience=${this.state.zoneExp}`;
       await axios.get(url);
     } else {
       alert("Por favor, completa todos los campos");
